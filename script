@@ -1,0 +1,38 @@
+-- converted by xRed's Instance to script converter (manually fixed)
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Create the ScreenGui
+local MainGui = Instance.new("ScreenGui")
+MainGui.Archivable = true
+MainGui.AutoLocalize = true
+MainGui.DisplayOrder = 0
+MainGui.Enabled = true
+MainGui.IgnoreGuiInset = false
+MainGui.Name = "MainGui"
+MainGui.ResetOnSpawn = true
+MainGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+MainGui.Parent = player:WaitForChild("PlayerGui")
+
+-- Create the Frame inside MainGui
+local Frame = Instance.new("Frame")
+Frame.Active = false
+Frame.AnchorPoint = Vector2.new(0, 0)
+Frame.Archivable = true
+Frame.AutoLocalize = true
+Frame.BackgroundColor3 = Color3.new(0.0470588, 0.0470588, 0.0470588)
+Frame.BackgroundTransparency = 0.05
+Frame.BorderColor3 = Color3.new(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.ClipsDescendants = false
+Frame.LayoutOrder = 0
+Frame.Name = "Frame"
+Frame.Position = UDim2.new(0.356998831, 0, 0.288137794, 0)
+Frame.Rotation = 0
+Frame.Selectable = false
+Frame.Size = UDim2.new(0, 484, 0, 289)
+Frame.SizeConstraint = Enum.SizeConstraint.RelativeXY
+Frame.Style = Enum.FrameStyle.Custom
+Frame.Visible = true
+Frame.ZIndex = 1
+Frame.Parent = MainGui
