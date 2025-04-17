@@ -1,78 +1,87 @@
-local module = {}
+local MainGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local Frame_2 = Instance.new("Frame")
+local TextLabel_2 = Instance.new("TextLabel")
+local HomeButton = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local Button = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
 
-function module.CreateUI()
-    local ScreenGui = Instance.new("ScreenGui")
-    local MainFrame = Instance.new("Frame")
-    local TitleText = Instance.new("TextLabel")
-    local PurpleRect = Instance.new("Frame")
-    local WhiteRect = Instance.new("Frame")
-    
-    -- ScreenGui configuration
-    ScreenGui.Name = "CrackheadUI"
-    ScreenGui.Parent = game.CoreGui
-    
-    -- Main frame configuration
-    MainFrame.Name = "MainFrame"
-    MainFrame.Size = UDim2.new(0, 300, 0, 200)
-    MainFrame.Position = UDim2.new(0.5, -150, 0.5, -100)
-    MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-    MainFrame.BorderSizePixel = 0
-    MainFrame.Parent = ScreenGui
-    
-    -- Add corner radius to main frame
-    local UICorner = Instance.new("UICorner")
-    UICorner.CornerRadius = UDim.new(0, 10)
-    UICorner.Parent = MainFrame
-    
-    -- Title text configuration
-    TitleText.Name = "TitleText"
-    TitleText.Size = UDim2.new(1, 0, 0, 30)
-    TitleText.Position = UDim2.new(0, 0, 0, 0)
-    TitleText.BackgroundTransparency = 1
-    TitleText.Text = "Crackhead by "
-    TitleText.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TitleText.TextSize = 18
-    TitleText.Font = Enum.Font.SourceSansBold
-    TitleText.Parent = MainFrame
-    
-    -- Lean text (purple part)
-    local LeanText = Instance.new("TextLabel")
-    LeanText.Name = "LeanText"
-    LeanText.Size = UDim2.new(0, 40, 0, 30)
-    LeanText.Position = UDim2.new(0.5, 10, 0, 0)
-    LeanText.BackgroundTransparency = 1
-    LeanText.Text = "Lean"
-    LeanText.TextColor3 = Color3.fromRGB(147, 0, 255)
-    LeanText.TextSize = 18
-    LeanText.Font = Enum.Font.SourceSansBold
-    LeanText.Parent = MainFrame
-    
-    -- Purple rectangle
-    PurpleRect.Name = "PurpleRect"
-    PurpleRect.Size = UDim2.new(0, 120, 0, 40)
-    PurpleRect.Position = UDim2.new(0.1, 0, 0.3, 0)
-    PurpleRect.BackgroundColor3 = Color3.fromRGB(147, 0, 255)
-    PurpleRect.BorderSizePixel = 0
-    PurpleRect.Parent = MainFrame
-    
-    -- White rectangle
-    WhiteRect.Name = "WhiteRect"
-    WhiteRect.Size = UDim2.new(0, 120, 0, 40)
-    WhiteRect.Position = UDim2.new(0.1, 0, 0.55, 0)
-    WhiteRect.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    WhiteRect.BorderSizePixel = 0
-    WhiteRect.Parent = MainFrame
-    
-    -- Add corner radius to rectangles
-    local PurpleCorner = Instance.new("UICorner")
-    PurpleCorner.CornerRadius = UDim.new(0, 6)
-    PurpleCorner.Parent = PurpleRect
-    
-    local WhiteCorner = Instance.new("UICorner")
-    WhiteCorner.CornerRadius = UDim.new(0, 6)
-    WhiteCorner.Parent = WhiteRect
-    
-    return ScreenGui
-end
+--Properties:
 
-return module
+MainGui.Name = "MainGui"
+MainGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+MainGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = MainGui
+Frame.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+Frame.BackgroundTransparency = 0.050
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.356998831, 0, 0.288137794, 0)
+Frame.Size = UDim2.new(0, 484, 0, 289)
+
+UICorner.CornerRadius = UDim.new(0.0500000007, 0)
+UICorner.Parent = Frame
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0165290516, 0, 0.0207612459, 0)
+TextLabel.Size = UDim2.new(0, 148, 0, 50)
+TextLabel.Font = Enum.Font.Gotham
+TextLabel.Text = "Crackhead by"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 20.000
+TextLabel.TextWrapped = true
+
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(-0.0020657375, 0, 0.193771631, 0)
+Frame_2.Size = UDim2.new(0, 484, 0, 2)
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.19628112, 0, 0.0207612459, 0)
+TextLabel_2.Size = UDim2.new(0, 148, 0, 50)
+TextLabel_2.Font = Enum.Font.Gotham
+TextLabel_2.Text = "Lean"
+TextLabel_2.TextColor3 = Color3.fromRGB(119, 0, 255)
+TextLabel_2.TextSize = 20.000
+TextLabel_2.TextWrapped = true
+
+HomeButton.Name = "HomeButton"
+HomeButton.Parent = Frame
+HomeButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HomeButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HomeButton.BorderSizePixel = 0
+HomeButton.Position = UDim2.new(0.0537190065, 0, 0.280276805, 0)
+HomeButton.Size = UDim2.new(0, 109, 0, 44)
+
+UICorner_2.CornerRadius = UDim.new(0, 5)
+UICorner_2.Parent = HomeButton
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(136, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(68, 0, 203))}
+UIGradient.Parent = HomeButton
+
+Button.Name = "Button"
+Button.Parent = Frame
+Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Button.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Button.BorderSizePixel = 0
+Button.Position = UDim2.new(0.0537190065, 0, 0.474048436, 0)
+Button.Size = UDim2.new(0, 109, 0, 44)
+Button.ZIndex = 554
+
+UICorner_3.CornerRadius = UDim.new(0, 5)
+UICorner_3.Parent = Button
