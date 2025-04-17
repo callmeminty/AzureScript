@@ -1,35 +1,78 @@
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
+local module = {}
 
-local MainGui = Instance.new("ScreenGui")
-MainGui.Archivable = true
-MainGui.AutoLocalize = true
-MainGui.DisplayOrder = 0
-MainGui.Enabled = true
-MainGui.IgnoreGuiInset = false
-MainGui.Name = "MainGui"
-MainGui.ResetOnSpawn = true
-MainGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-MainGui.Parent = player:WaitForChild("PlayerGui")
+function module.CreateUI()
+    local ScreenGui = Instance.new("ScreenGui")
+    local MainFrame = Instance.new("Frame")
+    local TitleText = Instance.new("TextLabel")
+    local PurpleRect = Instance.new("Frame")
+    local WhiteRect = Instance.new("Frame")
+    
+    -- ScreenGui configuration
+    ScreenGui.Name = "CrackheadUI"
+    ScreenGui.Parent = game.CoreGui
+    
+    -- Main frame configuration
+    MainFrame.Name = "MainFrame"
+    MainFrame.Size = UDim2.new(0, 300, 0, 200)
+    MainFrame.Position = UDim2.new(0.5, -150, 0.5, -100)
+    MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    MainFrame.BorderSizePixel = 0
+    MainFrame.Parent = ScreenGui
+    
+    -- Add corner radius to main frame
+    local UICorner = Instance.new("UICorner")
+    UICorner.CornerRadius = UDim.new(0, 10)
+    UICorner.Parent = MainFrame
+    
+    -- Title text configuration
+    TitleText.Name = "TitleText"
+    TitleText.Size = UDim2.new(1, 0, 0, 30)
+    TitleText.Position = UDim2.new(0, 0, 0, 0)
+    TitleText.BackgroundTransparency = 1
+    TitleText.Text = "Crackhead by "
+    TitleText.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TitleText.TextSize = 18
+    TitleText.Font = Enum.Font.SourceSansBold
+    TitleText.Parent = MainFrame
+    
+    -- Lean text (purple part)
+    local LeanText = Instance.new("TextLabel")
+    LeanText.Name = "LeanText"
+    LeanText.Size = UDim2.new(0, 40, 0, 30)
+    LeanText.Position = UDim2.new(0.5, 10, 0, 0)
+    LeanText.BackgroundTransparency = 1
+    LeanText.Text = "Lean"
+    LeanText.TextColor3 = Color3.fromRGB(147, 0, 255)
+    LeanText.TextSize = 18
+    LeanText.Font = Enum.Font.SourceSansBold
+    LeanText.Parent = MainFrame
+    
+    -- Purple rectangle
+    PurpleRect.Name = "PurpleRect"
+    PurpleRect.Size = UDim2.new(0, 120, 0, 40)
+    PurpleRect.Position = UDim2.new(0.1, 0, 0.3, 0)
+    PurpleRect.BackgroundColor3 = Color3.fromRGB(147, 0, 255)
+    PurpleRect.BorderSizePixel = 0
+    PurpleRect.Parent = MainFrame
+    
+    -- White rectangle
+    WhiteRect.Name = "WhiteRect"
+    WhiteRect.Size = UDim2.new(0, 120, 0, 40)
+    WhiteRect.Position = UDim2.new(0.1, 0, 0.55, 0)
+    WhiteRect.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    WhiteRect.BorderSizePixel = 0
+    WhiteRect.Parent = MainFrame
+    
+    -- Add corner radius to rectangles
+    local PurpleCorner = Instance.new("UICorner")
+    PurpleCorner.CornerRadius = UDim.new(0, 6)
+    PurpleCorner.Parent = PurpleRect
+    
+    local WhiteCorner = Instance.new("UICorner")
+    WhiteCorner.CornerRadius = UDim.new(0, 6)
+    WhiteCorner.Parent = WhiteRect
+    
+    return ScreenGui
+end
 
-local Frame = Instance.new("Frame")
-Frame.Active = false
-Frame.AnchorPoint = Vector2.new(0, 0)
-Frame.Archivable = true
-Frame.AutoLocalize = true
-Frame.BackgroundColor3 = Color3.new(0.0470588, 0.0470588, 0.0470588)
-Frame.BackgroundTransparency = 0.05
-Frame.BorderColor3 = Color3.new(0, 0, 0)
-Frame.BorderSizePixel = 0
-Frame.ClipsDescendants = false
-Frame.LayoutOrder = 0
-Frame.Name = "Frame"
-Frame.Position = UDim2.new(0.356998831, 0, 0.288137794, 0)
-Frame.Rotation = 0
-Frame.Selectable = false
-Frame.Size = UDim2.new(0, 484, 0, 289)
-Frame.SizeConstraint = Enum.SizeConstraint.RelativeXY
-Frame.Style = Enum.FrameStyle.Custom
-Frame.Visible = true
-Frame.ZIndex = 1
-Frame.Parent = MainGui
+return module
